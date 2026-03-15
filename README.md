@@ -2,7 +2,7 @@
 
 *A from-scratch Runge-Kutta 4 implementation for solving the hydrodynamic shock wave equations*
 
-Completed as part of a computational physics course at **Sapienza University of Rome**, where the coursework was conducted in Italian.
+Completed as part of a course on fluid dynamics in astrophyiscs at **Sapienza University of Rome**, where the coursework was conducted in Italian.
 
 ---
 
@@ -18,7 +18,7 @@ This notebook solves those equations numerically using a **fourth-order Runge-Ku
 
 The Sedov-Taylor model reduces the full fluid dynamics problem to three dimensionless scaling functions — **P(ξ)**, **R(ξ)**, and **V(ξ)** — representing the profiles of pressure, density, and velocity as functions of a dimensionless radial coordinate ξ = r / Rₛ, where Rₛ is the shock front radius. The boundary conditions are P(1) = R(1) = V(1) = 1 at the shock front.
 
-The system is brought into normal form and solved inward from ξ = 1 to ξ = 0 for three values of the adiabatic index γ, corresponding to different gas types:
+The system is brought into normal form and solved inward from ξ = 1 to ξ = 0 for three values of the adiabatic index γ, corresponding to different gas types: 
 
 | γ | Gas type |
 |---|---|
@@ -67,7 +67,7 @@ def rk4(f, v0, t0, tf, n, V):
     return V, t
 ```
 
-The three coupled ODEs for P′, R′, and V′ are passed as a single vector-valued function. The integration uses a step size of dξ = 10⁻⁶ (10⁶ steps) to ensure numerical stability and convergence — verified by confirming that halving the step size produces no visible change in the solution.
+The three coupled ODEs for P′, R′, and V′ are passed as a single vector-valued function. The integration uses a step size of dξ = 10⁻⁶ (10⁶ steps) to ensure numerical stability and convergence.
 
 ---
 
